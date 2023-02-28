@@ -11,6 +11,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" string="Title"/>
+                <field name="property_type_id"/>
                 <field name="bedrooms"/>
                 <field name="living_area" string="Living Area (sqm)"/>
                 <field name="expected_price"/>
@@ -95,6 +96,7 @@
                 <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
                 <group>
                 <filter string="Postcode" name="groupby_postcode" context="{'group_by': 'postcode'}"/>
+                <filter string="Property type" name="groupby_property_type_id" context="{'group_by': 'property_type_id'}"/>
                 </group>
             </search>
         </field>
